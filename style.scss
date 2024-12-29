@@ -1,8 +1,12 @@
 body {
   background: rgb(74, 8, 128);
-  background: radial-gradient(circle, rgb(74, 8, 128) 22%, rgb(45, 5, 62) 53%, rgb(13, 1, 21) 100%);
+  background: radial-gradient(
+    circle,
+    rgba(74, 8, 128, 1) 22%,
+    rgba(45, 5, 62, 1) 53%,
+    rgba(13, 1, 21, 1) 100%
+  );
 }
-
 * {
   margin: 0;
   padding: 0;
@@ -32,18 +36,19 @@ nav {
   top: 0;
   overflow: hidden;
   background-color: rgba(30, 2, 43, 0.6);
+
+  ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    li {
+      text-align: center;
+      a {
+        text-decoration: none;
+        padding: 10px;
+        font-size: 22px;
+      }
+    }
+  }
 }
-nav ul {
-  list-style-type: none;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-nav ul li {
-  text-align: center;
-}
-nav ul li a {
-  text-decoration: none;
-  padding: 10px;
-  font-size: 22px;
-}/*# sourceMappingURL=style.css.map */
