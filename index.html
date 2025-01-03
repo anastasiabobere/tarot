@@ -19,7 +19,7 @@
   </head>
   <body>
     <nav>
-      <img src="assets/small_icon.svg" alt="" />
+      <img class="logo" src="assets/small_icon.svg" alt="" />
       <ul>
         <li>
           <a href="#home">Home</a>
@@ -34,15 +34,15 @@
       <div class="content">
         <h1 id="heading_home">Learn your future now</h1>
         <h3>Book an appointment with a psychic</h3>
-        <button class="btn">Book</button>
+        <button class="btn"><a href="#book">Book</a></button>
         <img src="assets/big_icon.svg" alt="" />
       </div>
     </section>
 
     <section id="about">
-      <div class="content_about">
+      <div class="content_about content">
         <h2>About me</h2>
-        <p>
+        <p class="right">
           The cards have always spoken to me, whispering secrets and revealing
           paths unseen. For over 5 years, I have delved into the mysterious
           world of tarot, using it as a key to unlock answers hidden beneath the
@@ -54,10 +54,18 @@
           interpret the messages the cards reveal. Together, let us explore the
           mysteries that await.
         </p>
+        <div class="crystal-ball-container">
+          <div class="crystal-ball" id="crystal-ball">
+            <img src="assets/crystal-ball(3).png" id="ball-png" alt="" />
+            <p class="message" id="crystal-message">
+              Click the ball for a message...
+            </p>
+          </div>
+        </div>
       </div>
     </section>
     <section id="pricing">
-      <div class="content_pricing">
+      <div class="content_pricing content">
         <h2>Pricing</h2>
         <div class="cards">
           <div class="card">
@@ -94,7 +102,7 @@
       </div>
     </section>
     <section id="book">
-      <div class="content_book">
+      <div class="content_book content">
         <h2>Book <span>your</span> appointment</h2>
         <div id="form">
           <form>
@@ -104,21 +112,44 @@
             <input type="text" id="lname" name="lname" /><br />
             <label for="email">Your Email:</label><br />
             <input type="email" id="email" name="email" /><br />
-            <input type="radio" id="basic" name="plan" value="basic" />
-            <label for="basic">Basic</label><br />
-            <input type="radio" id="standard" name="plan" value="standard" />
-            <label for="standard">Standard</label><br />
-            <input type="radio" id="premium" name="plan" value="premium" />
-            <label for="premium">Premium</label><br />
+            <div class="radio-container">
+              <label for="basic">
+                Basic
+                <input
+                  type="radio"
+                  id="basic"
+                  name="plan"
+                  value="basic" /></label
+              ><br />
+
+              <label for="standard">
+                Standard
+                <input
+                  type="radio"
+                  id="standard"
+                  name="plan"
+                  value="standard" /></label
+              ><br />
+
+              <label for="premium">
+                Premium
+                <input
+                  type="radio"
+                  id="premium"
+                  name="plan"
+                  value="premium" /></label
+              ><br />
+            </div>
+
             <input type="submit" value="Book" class="btn" />
           </form>
         </div>
       </div>
     </section>
     <section id="testimonials">
-      <div class="content_testimonials">
+      <div class="content_testimonials content">
         <h2>Testimonials</h2>
-        <div class="cards_testimonials">
+        <div class="cards_testimonials cards">
           <div class="card">
             <h3>Amelia</h3>
             <p>
