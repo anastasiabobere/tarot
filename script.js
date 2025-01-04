@@ -8,7 +8,7 @@ links.forEach((link) => {
     nav.classList.add("hidden");
     setTimeout(() => {
       nav.classList.remove("hidden");
-    }, 2000); // 2 seconds delay
+    }, 1000); // 2 seconds delay
   });
 });
 const messages = [
@@ -79,4 +79,19 @@ ball.addEventListener("click", () => {
   setTimeout(() => {
     message.textContent = "Click the ball for a message...";
   }, 5000);
+});
+document.querySelectorAll(".nav-link").forEach((link) => {
+  link.addEventListener("click", function (e) {
+    e.preventDefault();
+    const targetId = this.getAttribute("href").substring(1);
+    const targetElement = document.getElementById(targetId);
+    const offset = 70; // Adjust this value for your fixed navbar height
+    const topPosition =
+      targetElement.getBoundingClientRect().top + window.scrollY - offset;
+
+    window.scrollTo({
+      top: topPosition,
+      behavior: "smooth",
+    });
+  });
 });

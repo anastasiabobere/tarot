@@ -2,7 +2,7 @@ body {
   background: rgb(74, 8, 128);
   background: radial-gradient(
     circle,
-    rgb(42, 1, 75) 28%,
+    rgb(49, 4, 86) 28%,
     rgb(32, 2, 45) 73%,
     rgb(11, 1, 17) 100%
   );
@@ -56,6 +56,11 @@ p {
   font-size: 15px;
   cursor: pointer;
 }
+.btn:hover {
+  border-color: #6a5acd;
+  outline: none;
+  box-shadow: 0 0 10px rgba(198, 93, 224, 0.5);
+}
 section {
   height: 100vh;
   overflow: hidden;
@@ -73,10 +78,10 @@ nav {
   align-items: center;
   height: 100px;
   z-index: 1000;
-  transition: transform 0.5s ease-in; // Smooth hide/show effect
+  transition: transform 0.5s ease-in;
 
   &.hidden {
-    transform: translateY(-100%); // Move nav out of view
+    transform: translateY(-100%);
   }
 
   ul {
@@ -97,16 +102,23 @@ nav {
     list-style-type: none;
   }
   .card {
-    background-color: rgba(35, 8, 44, 0.7);
+    background-color: rgba(72, 11, 87, 0.8);
     text-align: center;
     width: 330px;
     height: 460px;
     margin: 20px;
     margin-top: 5px;
     border-radius: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     h3 {
       font-size: 35px;
     }
+  }
+  .card:hover {
+    border-color: #6a5acd;
+    outline: none;
+    box-shadow: 0 0 10px rgba(198, 93, 224, 0.5);
+    transform: translateY(-10px);
   }
 }
 //sections
@@ -114,6 +126,7 @@ nav {
   display: flex;
   flex-direction: column;
   align-items: center;
+  animation: introLoad 3s forwards;
   * {
     margin-top: 18px;
   }
@@ -179,5 +192,172 @@ nav {
     input[type="radio"] {
       accent-color: rgba(198, 93, 224, 1);
     }
+  }
+}
+
+// Testimonials
+.cards_testimonials {
+  .card {
+    padding: 10px;
+
+    h3 {
+      margin-top: 10px;
+    }
+
+    p {
+      margin: 20px;
+    }
+  }
+}
+
+@keyframes introLoad {
+  from {
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+  to {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+// Media Queries
+@media (max-width: 1200px) {
+  nav ul {
+    flex-wrap: wrap; // Allows the navigation to adjust for narrower screens
+  }
+
+  .cards {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .card {
+    width: 300px; // Slightly smaller cards for medium screens
+    height: 440px;
+  }
+
+  #form {
+    width: 90%; // Form adjusts to screen width
+  }
+}
+
+@media (max-width: 992px) {
+  h1 {
+    font-size: 70px; // Reduce heading size
+  }
+  section {
+    height: auto;
+  }
+  h2 {
+    font-size: 50px;
+  }
+
+  p {
+    font-size: 18px;
+  }
+
+  .btn {
+    width: 70px;
+    height: 35px;
+    font-size: 14px;
+  }
+
+  .card {
+    width: 280px; // Adjust card size
+    height: 420px;
+  }
+
+  #about p {
+    text-align: center;
+    margin: 20px auto;
+  }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 60px;
+  }
+
+  h2 {
+    font-size: 40px;
+  }
+
+  .card {
+    width: 250px; // Further reduce card size
+    height: 400px;
+  }
+
+  .content * {
+    margin-top: 15px; // Adjust spacing between elements
+  }
+
+  #form input {
+    width: 95%; // Inputs take up more width
+  }
+
+  .radio-container {
+    flex-direction: column; // Stack radio buttons
+    gap: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  h1 {
+    font-size: 50px;
+  }
+
+  h2 {
+    font-size: 30px;
+  }
+
+  .btn {
+    width: 60px;
+    height: 30px;
+    font-size: 13px;
+  }
+
+  nav {
+    height: auto;
+  }
+
+  .card {
+    width: 220px;
+    height: 380px;
+  }
+
+  #form {
+    flex-direction: column; // Stack form elements
+    width: 100%;
+  }
+
+  #about p {
+    margin: 10px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 375px) {
+  h1 {
+    font-size: 40px;
+  }
+
+  h2 {
+    font-size: 25px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  .btn {
+    font-size: 12px;
+    padding: 5px;
+  }
+
+  nav ul {
+    font-size: 14px; // Smaller font for nav items
+  }
+
+  #form input {
+    font-size: 16px; // Adjust input font size
+    padding: 10px;
   }
 }
